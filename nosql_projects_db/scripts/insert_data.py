@@ -8,6 +8,10 @@ db = init_db()
 
 
 def filter_data(data):
+    """
+    This  helper function helps to filter and trigger can_order_project constraint to find
+    customer who has fine and didn't pay in past 90 days
+    """
     filtered_data = []
     for project in data:
         customer_name = project.get("customer")
