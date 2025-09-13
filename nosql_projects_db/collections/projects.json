@@ -1,0 +1,35 @@
+[
+  {
+    "id": 1,
+    "name": "Banking Management System",
+    "customer": "M Bank",
+    "project_lead": "Bob Qwerty",
+    "planned_duration_days": 365,
+    "category": "high",
+    "category_coef": 1.6,
+    "start_date": "2025-09-12",
+    "executors": [1, 2, 3]
+  },
+  {
+    "id": 2,
+    "name": "CRM System",
+    "customer": "Product Company A",
+    "project_lead": "Alise Qwerty",
+    "planned_duration_days": 180,
+    "category": "medium",
+    "category_coef": 1.4,
+    "start_date": "2025-09-12",
+    "executors": [2, 4, 5]
+  },
+  {
+    "id": 3,
+    "name": "API",
+    "customer": "Product Company B",
+    "project_lead": "John Doe",
+    "planned_duration_days": 120,
+    "category": "low",
+    "category_coef": 1.2,
+    "start_date": "2025-08-10",
+    "executors": [3, 4, 5]
+  }
+]

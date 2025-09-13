@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "project_id": 1,
+    "executor_id": 1,
+    "date": "2025-09-13",
+    "task": "Configured business logic and created diagram for future DB system",
+    "hours": 6
+  },
+  {
+    "id": 2,
+    "project_id": 1,
+    "executor_id": 2,
+    "date": "2025-09-13",
+    "task": "Banking system project preparation & initialization",
+    "hours": 6
+  },
+  {
+    "id": 3,
+    "project_id": 1,
+    "executor_id": 3,
+    "date": "2025-09-13",
+    "task": "Creating models,views & endpoints skeleton for admin system",
+    "hours": 6
+  },
+  {
+    "id": 4,
+    "project_id": 3,
+    "executor_id": 4,
+    "date": "2025-09-13",
+    "task": "Developing auth system & logic for API",
+    "hours": 5
+  },
+  {
+    "id": 5,
+    "project_id": 3,
+    "executor_id": 5,
+    "date": "2025-09-13",
+    "task": "Developing auth system & logic for API",
+    "hours": 5
+  },
+  {
+    "id": 6,
+    "project_id": 2,
+    "executor_id": 4,
+    "date": "2025-09-13",
+    "task": "DB description",
+    "hours": 2
+  },
+  {
+    "id": 7,
+    "project_id": 2,
+    "executor_id": 5,
+    "date": "2025-09-13",
+    "task": "DB description",
+    "hours": 2
+  }
+]

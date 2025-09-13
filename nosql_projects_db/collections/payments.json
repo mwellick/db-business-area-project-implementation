@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "project_id": 1,
+    "month": "2025-09",
+    "initial_amount": 3000,
+    "overhead": 1200,
+    "total_amount": 4200,
+    "paid": false,
+    "payment_date": null
+  },
+  {
+    "id": 2,
+    "project_id": 2,
+    "month": "2025-09",
+    "initial_amount": 1800,
+    "overhead": 720,
+    "total_amount": 2520,
+    "paid": false,
+    "payment_date": null
+  },
+  {
+    "id": 3,
+    "project_id": 3,
+    "month": "2025-09",
+    "initial_amount": 1500,
+    "overhead": 600,
+    "total_amount": 2100,
+    "paid": true,
+    "payment_date": "2025-09-10"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Michael E.",
+    "position": "Python Senior Developer",
+    "position_coef": 1.6,
+    "qualification": "high",
+    "hourly_rate": 20
+  },
+  {
+    "id": 2,
+    "name": "Alex B.",
+    "position": "Python Middle Developer",
+    "position_coef": 1.4,
+    "qualification": "middle",
+    "hourly_rate": 13
+  },
+  {
+    "id": 3,
+    "name": "Monica C.",
+    "position": "Python Middle Developer",
+    "position_coef": 1.4,
+    "qualification": "middle",
+    "hourly_rate": 13
+  },
+  {
+    "id": 4,
+    "name": "John K.",
+    "position": "Python Junior Developer",
+    "position_coef": 1.2,
+    "qualification": "junior",
+    "hourly_rate": 8
+  },
+  {
+    "id": 5,
+    "name": "Martin S.",
+    "position": "Python Junior Developer",
+    "position_coef": 1.2,
+    "qualification": "junior",
+    "hourly_rate": 8
+  }
+]
