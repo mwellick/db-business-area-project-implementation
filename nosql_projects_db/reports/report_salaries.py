@@ -1,7 +1,7 @@
 from nosql_projects_db.scripts.calculate_salary import calculate_monthly_salary
 
 
-def salaries_report(db, year, month):
+def salaries_report(db, year: int, month: int):
     salaries = calculate_monthly_salary(db, year, month)
     reports = {}
 
@@ -23,7 +23,8 @@ def salaries_report(db, year, month):
                 "total_salary": salary.get("total_salary")
             }
         )
-
+    # This block is made for easily reformation  into json format &
+    # better readability
     results = []
 
     for k, v in reports.items():
