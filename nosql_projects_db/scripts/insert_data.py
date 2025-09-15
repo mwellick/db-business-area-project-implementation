@@ -1,15 +1,12 @@
 import os
 import json
 
-from nosql_projects_db.engine.init_db import init_db
 from nosql_projects_db.scripts.constraints import can_order_project, can_report
 
-db = init_db()
 
-
-def filter_projects(data):
+def filter_projects(db, data):
     """
-    This  helper function helps to filter and trigger can_order_project constraint to find
+    This  helper function helps to filter data and trigger can_order_project constraint to find
     customer who has fine and didn't pay in past 90 days
     """
     filtered_data = []
@@ -24,10 +21,10 @@ def filter_projects(data):
     return filtered_data
 
 
-def filter_reports(data):
+def filter_reports(db, data):
     """
     The same logic as in an above  helper func:
-    Filters and trigger can_report constraint
+    Filters data and trigger can_report constraint
     """
 
     filtered_data = []
@@ -43,7 +40,7 @@ def filter_reports(data):
     return filtered_data
 
 
-def insert_collection(collection_name, filename):
+def insert_collection(db, collection_name, filename):
     curr_dir = os.path.dirname(__file__)
     file_path = os.path.join(curr_dir, "..", "collections", filename)
 
@@ -51,10 +48,10 @@ def insert_collection(collection_name, filename):
         data = json.load(f)
 
     if collection_name == "projects":
-        data = filter_projects(data)
+        data = filter_projects(db, data)
 
     if collection_name == "reports":
-        data = filter_reports(data)
+        data = filter_reports(db, data)
 
     if data:
         db[collection_name].insert_many(data)
