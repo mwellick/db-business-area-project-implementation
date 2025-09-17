@@ -44,7 +44,7 @@ if __name__ == "__main__":
     insert_data(db)
 
     with open(file_path, "r", encoding="utf-8") as f:
-        data = json.load(f)
+        reports_data = json.load(f)
 
-    make_reports(db, data)
+    make_reports(db, reports_data)
     # calc_monthly_salary(db, data, 2025, 9)  # Optional
