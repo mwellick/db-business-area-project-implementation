@@ -1,8 +1,8 @@
 from nosql_projects_db.scripts.calculate_salary import calculate_monthly_salary
 
 
-def salaries_report(db, year: int, month: int):
-    salaries = calculate_monthly_salary(db, year, month)
+def salaries_report(db, reports_data, year: int, month: int):
+    salaries = calculate_monthly_salary(db, year, month, reports_data)
     reports = {}
 
     for salary in salaries:

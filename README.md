@@ -25,7 +25,7 @@ Built with **MongoDB** and **Python**, it manages projects, executors, time trac
 ```
 ### NoSQL Document Structure
 
-Project
+ Project
  ├─ id
  ├─ name
  ├─ customer
@@ -34,32 +34,26 @@ Project
  ├─ category
  ├─ category_coef
  ├─ start_date
- └─ executors [ ]
-      ├─ executor_id
-      ├─ name
-      ├─ position
-      ├─ position_coef
-      ├─ qualification
-      ├─ hourly_rate
-      └─ reports [ ]
-           ├─ report_id
-           ├─ project_id
-           ├─ executor_id
-           ├─ date
-           ├─ task
-           ├─ hours
-           └─ payments [ ]
-                ├─ payment_id
-                ├─ project_id
-                ├─ month
-                ├─ initial_amount
-                ├─ overhead
-                ├─ total_amount
-                ├─  paid
-                └─ payment_date
+ └─ Executors [ ]
+ │    ├─ executor_id
+ │    ├─ name
+ │    ├─ position
+ │    ├─ position_coef
+ │    ├─ qualification
+ │    └─ hourly_rate
+ ├─ Payments [ ]
+      ├─ payment_id
+      ├─ project_id
+      ├─ month
+      ├─ initial_amount
+      ├─ overhead
+      ├─ total_amount
+      ├─ paid
+      └─ payment_date
                 
 
 ```
+
 ## Project structure
 
 ```aiignore

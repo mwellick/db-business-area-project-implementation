@@ -31,17 +31,31 @@ def can_order_project(db, customer_name):
     return len(list(projects)) == 0
 
 
-def can_report(db, executor_id, report_date, next_report_hours):
+def can_report(report_data, executor_id, report_date, next_report_hours):
     """
     The same logic as in an above constraint docstring
     If DS's empty - may be added any report (according to time)
     """
-
-    reports = db.reports.find(
-        {
-            "executor_id": executor_id,
-            "date": report_date
-        }
+    total_hours = sum(
+        r.get("hours", 0) for r in report_data
+        if r.get("executor_id") == executor_id and r.get("date") == report_date
     )
-    total_hours = sum(r.get("hours", 0) for r in reports)
     return total_hours + next_report_hours <= 10
+
+
+def filter_reports(db, data):
+    """
+    Filters data and trigger can_report constraint
+    """
+
+    filtered_data = []
+    for report in data:
+        executor_id = report.get("executor_id")
+        date = report.get("date")
+        hours = report.get("hours")
+        if can_report(db, executor_id, date, hours):
+            filtered_data.append(report)
+        else:
+            print(f"Can't report more than 10 hours per day for executor: {executor_id}")
+
+    return filtered_data

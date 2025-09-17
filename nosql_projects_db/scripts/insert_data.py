@@ -1,7 +1,7 @@
 import os
 import json
 
-from nosql_projects_db.scripts.constraints import can_order_project, can_report
+from nosql_projects_db.scripts.constraints import can_order_project
 
 
 def filter_projects(db, data):
@@ -21,25 +21,6 @@ def filter_projects(db, data):
     return filtered_data
 
 
-def filter_reports(db, data):
-    """
-    The same logic as in an above  helper func:
-    Filters data and trigger can_report constraint
-    """
-
-    filtered_data = []
-    for report in data:
-        executor_id = report.get("executor_id")
-        date = report.get("date")
-        hours = report.get("hours")
-        if can_report(db, executor_id, date, hours):
-            filtered_data.append(report)
-        else:
-            print(f"Can't report more than 10 hours per day for executor: {executor_id}")
-
-    return filtered_data
-
-
 def insert_collection(db, collection_name, filename):
     curr_dir = os.path.dirname(__file__)
     file_path = os.path.join(curr_dir, "..", "collections", filename)
@@ -49,9 +30,6 @@ def insert_collection(db, collection_name, filename):
 
     if collection_name == "projects":
         data = filter_projects(db, data)
-
-    if collection_name == "reports":
-        data = filter_reports(db, data)
 
     if data:
         db[collection_name].insert_many(data)

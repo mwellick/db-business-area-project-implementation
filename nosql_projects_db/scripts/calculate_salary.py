@@ -1,7 +1,9 @@
+import os
+import json
 from datetime import datetime
 
 
-def calculate_monthly_salary(db, year, month):
+def calculate_monthly_salary(db, year, month, reports_data):
     """
     This function calculates salaries only for those executors
     - which projects have been paid from customers on selected month
@@ -21,17 +23,12 @@ def calculate_monthly_salary(db, year, month):
         hourly_rate = executor.get("hourly_rate")
         position_coef = executor.get("position_coef")
 
-        reports = list(
-            db.reports.find(
-                {
-                    "executor_id": executor_id,
-                    "date": {
-                        "$gte": start_date.isoformat(),
-                        "$lte": end_date.isoformat()
-                    }
-                }
-            )
-        )
+        reports = [
+            r for r in reports_data
+            if r.get("executor_id") == executor_id
+               and start_date <= datetime.fromisoformat(r.get("date")) < end_date
+        ]
+
         paid_reports = []
         for report in reports:
             project_id = report.get("project_id")
