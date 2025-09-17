@@ -4,14 +4,14 @@ from nosql_projects_db.scripts.insert_data import insert_collection
 from nosql_projects_db.scripts.calculate_salary import calculate_monthly_salary
 from nosql_projects_db.reports.report_projects import project_report
 from nosql_projects_db.reports.report_salaries import salaries_report
-from nosql_projects_db.reports.report_project_status_montly import project_status_report
+from nosql_projects_db.reports.report_project_status_monthly import project_status_report
 
 
-def insert_data():
-    insert_collection("projects", "projects.json")
-    insert_collection("executors", "executors.json")
-    insert_collection("reports", "reports.json")
-    insert_collection("payments", "payments.json")
+def insert_data(db):
+    insert_collection(db, "projects", "projects.json")
+    insert_collection(db, "executors", "executors.json")
+    insert_collection(db, "reports", "reports.json")
+    insert_collection(db, "payments", "payments.json")
     print("All data inserted successfully\n")
     print("*" * 100)
 
@@ -38,6 +38,6 @@ def make_reports(db):
 
 if __name__ == "__main__":
     db = init_db()
-    insert_data()
+    insert_data(db)
     make_reports(db)
 #   calc_monthly_salary(db, 2025, 9)  # Optional
