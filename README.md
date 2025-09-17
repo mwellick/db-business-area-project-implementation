@@ -54,8 +54,14 @@ Built with **MongoDB** and **Python**, it manages projects, executors, time trac
 
 ```
 
-## Project structure
 
+
+## Console output example
+![сonsole_output.png](generated_reports1.png)
+![сonsole_output.png](generated_reports2.png)
+
+
+## Project structure
 ```aiignore
 nosql_projects_db/
 │
