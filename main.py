@@ -17,7 +17,7 @@ def insert_data(db):
 
 
 def calc_monthly_salary(db, year: int, month: int):
-    salaries = calculate_monthly_salary(db, 2025, 9)
+    salaries = calculate_monthly_salary(db, year, month)
     print(json.dumps(salaries, indent=2))
 
 
